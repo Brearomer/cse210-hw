@@ -3,67 +3,104 @@ using System.Diagnostics.Contracts;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.VisualBasic;
 
 public class ReflectionActivity : Activity
 {
-     private List<string> _prompts;
-     private List<string> _questions;
+   
 
 
-     public ReflectionActivity(string name, string descripton, int duration ) : base(name, descripton, duration) 
+   private List<string> _prompts = new List<string>()
      {
-         
-
-         
-               public string GetRandomPrompt()
-               {
-                 return $"{_prompts}";
-               }
-               
+        "Think of a time when you stood up for someoneelse",
+        "Think of a time when you did something really difficult",
+        "Think of a time when you helped someone in need",
+        "Think of a time when you did something truly selfless.",
+     };
 
 
-
-               public string GetRandomQuestion(string _questions)
-               {
-                    Console.WriteLine($"Why was this experience meaningful to you?");
-                    Console.WriteLine($"Have you ever done anythng like this before? ");
-                    Console.WriteLine($"How did you get started? ");
-                    Console.WriteLine($"How did you feel when it was complete? ");
-                    Console.WriteLine($"What maade this time different than other times when you were not as successful? ");
-                    Console.WriteLine($"What is your favorite thing about this experience? ");
-                    Console.WriteLine($"What could you learn from this expereience that applies to other situations? ");
-                    Console.WriteLine($"What did you learn about yourself through this experience? ");
-                    Console.WriteLine($"How can you keep this experience in mind in the future?");
-
-               } 
-               Console.WriteLine(" Few seconds to ")
-               
-
-                DisplayPrompt()
-               {
-                    Console.WriteLine("Think of a time when you stood up for someone else");
-                    Console.WriteLine("Think of a time when you did something really difficult.");
-                    Console.WriteLine("Think of a time when you help someoone in need");
-                    Console.WriteLine("Think of a time when you dod something truly selfiess");
-
-               }
-
-                DisplayQuestions()
-               {
-               }
-               public void run()
-               {
-               }
-          }
+     private List<string> _questions = new List<string>()
+     {
+        "Why was this experience meaningful to you ?",
+        "Have you ever done anything like this before ?",
+        "How did you get started?",
+        "What did you feel when it was complete?",
+        "What made this time different than other times when you were not as successful?",
+        "What is your favorite thing about this experience? ",
+        "What could you learn from this experience that applies to other situation?",
+        "What did you learn about yourself through this experience? ",
+        "How can you keep this experience in mind in the future?",
+     };
 
 
 
+     public List<string>prompts = new List<string> 
+     {
+       "Think of a time when you stood up for someone else",
+        "Think of a time when you did something difficult.",
+        "Think of a time when you helped someone in need.",
+        "Think of a time when you did something truly selfless.",
+      
+     };
 
-
-
-
-
-
-     }
+   public Random rng = new();
+   public string GetRandomPrompts()
+     {
+      int index = rng.Next(_prompts.Count);
+      return _prompts[index];
      }
      
+
+    public List<string>questions = new List<string>
+    {
+      "Why was this experience meaningful to you ?",
+        "Have you ever done anything like this before ?",
+        "How did you get started?",
+        "What did you feel when it was complete?",
+        "What made this time different than other times when you were not as successful?",
+        "What is your favorite thing about this experience? ",
+        "What could you learn from this experience that applies to other situation?",
+        "What did you learn about yourself through this experience? ",
+        "How can you keep this experience in mind in the future?",
+     };
+    
+    
+   
+   public string GetRandomQuestions()
+   {
+      int index = rng.Next(_questions.Count);
+      return _questions[index];
+   } 
+
+   public void ReflectionExercise()
+   {
+      DateTime startTime = DateTime.Now;
+      DateTime futureTime = startTime.AddSeconds(30);
+      if (DateTime.Now < futureTime)
+      {
+         Console.WriteLine("Start Now ...");
+         ShowCountdown();
+
+         Console.WriteLine("Stop!!...");
+      }
+   }
+
+
+
+
+
+
+    
+     
+
+
+
+   
+
+}
+
+
+
+
+
+

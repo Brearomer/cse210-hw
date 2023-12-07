@@ -10,12 +10,10 @@ using System.Runtime.CompilerServices;
     private string _name;
     private string _description;
     private int _duration;
-    public Activity(string name , string descripton, int duration)
-{
-        _name = name;
-        _description = descripton; 
-        
-}
+    public Activity()
+    {
+       
+    }
     public void DisplayStartingMessage()
    {
         System.Console.WriteLine($"Welcome to the {_name} activity");
@@ -28,34 +26,37 @@ using System.Runtime.CompilerServices;
 
     public void DisplayEndingMessage()
     {
-        Console.WriteLine($"Good Job !! {_name} for {_duration}");
+        Console.WriteLine($"Good Job !! {_name} for {_duration} 🤗");
     }
 
+    
 
+    public void ShowSpinner(int seconds)
+    {
+      
+    }
 
-    public void ShowSpinner()
+    public void Run()
     {
     }
 
     public void ShowCountdown()
     {
+       for(int i =5; i >0; i--)
+       {
+          Console.Write(i);
+          Thread.Sleep(1000);
+          Console.Write("\b \b");
 
-        Console.Write("5");
-        Thread.Sleep(1000);
-        Console.Write("/b");
-        Console.Write("4");
-        Thread.Sleep(1000);
-        Console.Write("/b");
-        Console.Write("3");
-        Thread.Sleep(1000);
-        Console.Write("2");
-        Console.Write("/b");
-        Thread.Sleep(1000);
-        Console.Write("1");
+       }
+       Console.WriteLine("Done.🤗");
 
+        
 
-        Console.WriteLine("Done!!");
     }
+
+
+
 
 
 

@@ -3,39 +3,42 @@ using System.Security.Cryptography.X509Certificates;
 
 public class BreathingActivity : Activity
 {
+  private string _name;
+  private string _description;
 
-
-  public BreathingActivity(string name, string descripton, int duration) : base(name, descripton, duration)
+  private int _duration;
+  public BreathingActivity() : base()
   {
-    
-
-    
-    
-
-
-   
-    
-     
-        Console.Write("5");
-        Thread.Sleep(1000);
-        Console.Write("/b");
-        Console.Write("4");
-        Thread.Sleep(1000);
-        Console.Write("/b");
-        Console.Write("3");
-        Thread.Sleep(1000);
-        Console.Write("2");
-        Console.Write("/b");
-        Thread.Sleep(1000);
-        Console.Write("1");
-
-
-        Console.WriteLine("Done!!");
-       
-      
-      
+    _name = "Breathing";
+    _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
   }
+
+  public void BreathingExercise()
+  {
+    DateTime startTime = DateTime.Now;
+    DateTime futureTime = startTime.AddSeconds(_duration);
+    if (DateTime.Now < futureTime)
+    {
+       Console.WriteLine("Breathe in ...");
+       ShowCountdown();
+      
+        Console.WriteLine("Breathe out...");
+    }
+  }
+   
+     
+  
+   
+   
+
+
 }
+
+
+
+
+
+
 
 
 
