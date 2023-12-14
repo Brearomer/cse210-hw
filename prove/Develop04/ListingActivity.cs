@@ -69,16 +69,21 @@ public class ListingActivity : Activity
              
         }
         Console.WriteLine("Done!!");
-        
-       
-      
-       
-
     }
 
 
 
-    
+    public void ListingRun()
+    {
+        DisplayStartingMessage();
+        GetRandomQuestions();
+        ListingExercise();
+        ShowCountdown();
+        DisplayEndingMessage();
+
+    }
+
+
 
 
 
@@ -86,7 +91,7 @@ public class ListingActivity : Activity
 
     // displays back the number of items were entered
 
-   
+
 
 
 

@@ -82,7 +82,17 @@ public class ReflectionActivity : Activity
          ShowCountdown();
 
          Console.WriteLine("Stop!!...");
-      }
+      } 
+   }
+
+   public void ReflectionRun()
+   {
+      DisplayStartingMessage();
+      GetRandomPrompts();
+      ReflectionExercise();
+      ShowCountdown();
+      DisplayEndingMessage();
+
    }
 
 
@@ -90,12 +100,11 @@ public class ReflectionActivity : Activity
 
 
 
-    
-     
 
 
 
-   
+
+
 
 }
 

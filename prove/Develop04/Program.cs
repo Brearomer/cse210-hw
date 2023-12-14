@@ -24,34 +24,28 @@ class Program
 
         if (response  == 1)
       {
-    
-        Console.WriteLine("How long, in seconds, would you like for your session");
-        string duration = Console.ReadLine();
-          int number = int.Parse(duration);
+  
         BreathingActivity breathingActivity = new BreathingActivity();
-        breathingActivity.DisplayStartingMessage();
-        breathingActivity.DisplayEndingMessage();
+        breathingActivity.BreathingRun();
+        
       } 
         
        else if (response == 2)
-      {
-         Console.WriteLine("How long, in seconds, would you like for your session");
-         string duration = Console.ReadLine();
-         int count = int.Parse(duration);
-          ListingActivity listingActivity = new ListingActivity();
-        listingActivity.DisplayStartingMessage();
-        listingActivity.DisplayEndingMessage();
-       }
+       {
+        ListingActivity listingActivity = new ListingActivity();
+        listingActivity.ListingRun();
 
+      }
+
+
+      
       
        else if (response == 3)
       {
-        Console.WriteLine("How long, in seconds, would you like for your session");
-        string duration = Console.ReadLine();
+        
         ReflectionActivity reflectionActivity = new ReflectionActivity();
-        reflectionActivity.DisplayStartingMessage();
-        reflectionActivity.DisplayEndingMessage(); 
-
+        reflectionActivity.ReflectionRun();
+    
       }
       
       if (response ==4)

@@ -23,8 +23,16 @@ public class BreathingActivity : Activity
        ShowCountdown();
       
         Console.WriteLine("Breathe out...");
-    }
-  }
+    } 
+  }  
+   public void BreathingRun()
+   {
+      DisplayStartingMessage();
+      BreathingExercise(); 
+      ShowCountdown();
+      DisplayEndingMessage();
+     
+   }
    
      
   
