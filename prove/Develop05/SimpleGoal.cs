@@ -1,10 +1,24 @@
 
 
-    public class SimpleGoal : Goal
+using System.Runtime.CompilerServices;
+
+public class SimpleGoal : Goal
     {
-        private bool _isComplete;
-        
-        public override void  RecordEvent()  
+     private bool _isComplete;
+      private string name;
+    private int scoreValue;
+
+    public bool Completed { get; }
+
+    public SimpleGoal(string shortName, string description, int points) : base(shortName, description, points)
+    {
+        Completed = false;
+    }
+    
+
+    
+
+    public override void  RecordEvent()  
         {
         }
 

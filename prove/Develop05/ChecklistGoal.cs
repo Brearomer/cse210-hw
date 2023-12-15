@@ -1,15 +1,27 @@
-   public  class ChecklistGoal : Goal
-   {
-      // That must Accomplished a certain number of times to be complete.
-      // Each time the user records this goal  they gain some value, but when they achieve the desired amount they get an extra bonus
+using System.Diagnostics.Contracts;
 
+public  class ChecklistGoal : Goal
+   {
+      
 
       private int _amountCompleted;
       private int _target;
-      private int _bonus; 
-      
+      private int _bonus;
+    private static string shortName;
+    private string shortName1;
+    private int points;
+    private object description;
 
-      public override void RecordEvent()
+    public ChecklistGoal(string name, int amountCompleted, int target, int bonus) : base (shortName, "checklist",bonus)
+      {
+         _amountCompleted = 0;
+         _target = target;
+         _bonus = bonus;
+      }
+
+    
+
+    public override void RecordEvent()
       { 
           
       }

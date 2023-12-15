@@ -2,13 +2,20 @@
 
    public class EternalGoal : Goal
    {
-        
-        //goals that never complete, but each time the user recoreds them  to gain points
-        // ex everytime you read your scriptures you get 100 points
-        public override void RecordEvent()
-        { 
+    private static int bonus;
+
+    public int TotalPointsEarned{get; set;}
+     
+     public EternalGoal(string shortName, int points) : base(shortName, "eternal", bonus)
+     {
+       TotalPointsEarned = 0;
+     }
+          
+  
+      public override void RecordEvent()
+      { 
            
-        }
+      }
 
 
 
